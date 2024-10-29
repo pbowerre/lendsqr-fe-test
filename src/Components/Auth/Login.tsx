@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import styles from './Login.module.scss';
+import { useNavigate } from 'react-router-dom';
+import styles from '../../Styles/Login.module.scss';
+import logo from '../../assets/Group.svg'; // Assuming the Lendsqr logo path
+import signInImage from '../../assets/pablo-sign-in.svg'; // Path to the image on the left side
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -20,15 +24,25 @@ const Login: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
+    const validEmail = 'careers@lendsqr.com';
+    const validPassword = '12345';
+
+    if (email === validEmail && password === validPassword) {
+      // Store login status in localStorage
+      localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('userEmail', email);
+
+      navigate('/dashboard');
+    } else {
+      alert('Invalid email or password');
+    }
   };
 
   return (
     <div className={styles.loginContainer}>
       <div className={styles.leftSection}>
-        <img src="/path/to/your-image.png" alt="Lendsqr logo" className={styles.logo} />
+        <img src={logo} alt="Lendsqr logo" className={styles.logo} />
+        <img src={signInImage} alt="Sign In Illustration" className={styles.signInImage} />
       </div>
       <div className={styles.rightSection}>
         <form className={styles.form} onSubmit={handleSubmit}>

@@ -1,0 +1,274 @@
+.dashboardContainer {
+    display: flex;
+    background-color: #fbfbfb;
+  }
+  
+  .sidebar {
+    width: 250px;
+    
+    background-color: #fff;
+  
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      
+    }
+    .sideHEad{
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      
+      gap: 3rem;
+      color:  #213F7D;
+
+      p{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .searchers{
+          color: #cad1e0;
+
+          &:last-child{
+            color: #213F7D;
+          }
+        }
+      }
+    }
+    .navMenu {
+      p {
+        font-size: 0.9rem;
+        color: #545F7D;
+        margin-top: 1rem;
+        padding: 1rem;
+      }
+      ul {
+        list-style: none;
+        
+        li {
+          margin: 0.5rem 0;
+          color: #213F7D;
+          cursor: pointer;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+      
+          .searchers {
+            color: #cad1e0;
+          }
+        }
+      
+        // Target the first child ul of the parent ul
+        &:first-child {
+          ul {
+            li {
+              &:first-child li {
+                background-color: #39cdcd21;
+                border-left: 2px solid #39CDCC;
+              }
+            }
+          }
+        }
+      }
+      &:first-child{
+        ul{
+          li{
+            &:first-child{
+              background-color: #39cdcd21;
+              border-left: 2px solid #39CDCC; // Move this inside the li block
+            }
+          }
+
+        }
+      }
+    }
+  }
+  
+  .mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  
+    .topbar {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+      background-color: #ffffff;
+      .input{
+        display: flex;
+        .searchInput {
+          padding: 0.5rem;
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+          border: 1px solid #ccc;
+          width: 250px;
+        }
+        .searchers{
+          background-color: #39CDCC;
+          padding: 0.6rem;
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+          color: #fff;
+          width: 40px;
+        }
+      }
+  
+      .userInfo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        padding: 0 10px;
+        gap: 40px;
+
+        .userAction{
+          display: flex;
+          align-items: center;
+          gap: 40px;
+
+          a{
+            color: #213F7D;
+            text-decoration: none;
+          }
+          .notifications{
+            .fonts{
+              font-size: 25px;
+              color: #213F7D;
+            }
+          }
+        }
+
+        .imgContent{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          .imgContentInner{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #213F7D;
+          }
+        }
+        img{
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+        }
+      }
+
+    }
+  
+    .content {
+      padding: 1.5rem;
+  
+      h2 {
+        margin-bottom: 1rem;
+      }
+  
+      .userStats {
+        display: flex;
+        gap: 2.5rem;
+        margin-bottom: 2rem;
+        align-items: start;
+  
+        .statCard {
+          background-color: #fff;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          align-items: start;
+          border-radius: 8px;
+          padding: 1.5rem;
+          flex: 1;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          
+          .iconers{
+            background: #e018ff1d;
+            border-radius: 50%;
+            padding: 15px;
+            width: 60px;
+          }
+          &:nth-child(2) .iconers {
+            background: #5618ff1d;
+          }
+          &:nth-child(3) .iconers{
+            background: #f55f441d;
+          }
+          &:nth-child(4) .iconers{
+            background: #ff33661d;
+          }
+          p {
+            font-size: 0.9rem;
+            text-transform:uppercase;
+            color: #545F7D;
+            font-weight: 600;
+          }
+  
+          h3 {
+            font-size: 1.6rem;
+            margin: 0;
+            color: #213F7D;
+          }
+        }
+      }
+    }
+  
+    .userTable {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        .theader{
+         
+          img{
+            width: 13px;
+            margin-left: 10px;
+          }
+        }
+        th, td {
+          padding: 1rem;
+          text-align: left;
+          border-bottom: 1px solid #eee;
+        }
+       
+  
+        th {
+          color: #545F7D;
+          font-size: 0.9rem;
+          border: none;
+        }
+  
+        .status {
+          padding: 0.25rem 0.5rem;
+          border-radius: 12px;
+          font-size: 0.95rem;
+          text-align: center;
+          font-weight: 400;
+        }
+        tbody{
+          tr{
+            td{
+              color: #545F7D;
+              img{
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        .inactive { background-color: #f5f5f7; color: #545F7D; }
+        .pending { background-color: #fff3cd; color: #E9B200; }
+        .blacklisted { background-color: #fce6eb; color: #E4033B; }
+        .active { background-color: #f3fcf6; color: #39CD62; }
+      }
+    }
+  }
+  
